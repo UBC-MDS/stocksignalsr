@@ -88,3 +88,15 @@ devtools::install_github("UBC-MDS/stocksignalsr")
 ``` r
 library(stocksignalsr)
 ```
+
+get_data(“MSFT”)
+
+get_bbands(“MSFT”)
+
+plot_bbands(“MSFT”)
+
+plot_ma_10_20days(“MSFT”)
+
+moving_average(“MSFT”, 20)
+
+plot_200ma(“MSFT”)
