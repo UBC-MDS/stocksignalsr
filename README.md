@@ -38,7 +38,7 @@ stocks.
 Package details The package consists of 6 functions:
 
 -   get_data: The function downloads all available historic price data
-    for a selected stock and saves it. It utilizes the yfinance python
+    for a selected stock and saves it. It utilizes the yfinance 
     package to automate the process.
 -   moving_average: The function (inside calc_moving_average.py module)
     calculates a moving average, i.e. the average stock closing price
@@ -88,3 +88,15 @@ devtools::install_github("UBC-MDS/stocksignalsr")
 ``` r
 library(stocksignalsr)
 ```
+
+get_data(“MSFT”)
+
+get_bbands(“MSFT”)
+
+plot_bbands(“MSFT”)
+
+plot_ma_10_20days(“MSFT”)
+
+moving_average(“MSFT”, 20)
+
+plot_200ma(“MSFT”)
