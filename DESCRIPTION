@@ -4,16 +4,14 @@ Version: 0.0.0.9000
 Authors@R: 
     c(person("Ruslan", "Dimitrov", , "ruslan.d.dim@gmail.com", role = c("aut", "cre"),
            comment = c(ORCID = "YOUR-ORCID-ID")),
-           "Robin", "Dhillon", , "robin@robindhillon.com", role = c("aut", "cre"),
+      person("Robin", "Dhillon", , "robin@robindhillon.com", role = c("ctb"),
            comment = c(ORCID = "YOUR-ORCID-ID")),
-           "Peng", "Zhang", , "peng@pengzhang.com", role = c("aut", "cre"),
+      person("Peng", "Zhang", , "peng@pengzhang.com", role = c("ctb"),
            comment = c(ORCID = "YOUR-ORCID-ID")),
-           "Chenyang", "Wang", , "chenyang@chenyangwang.com", role = c("aut", "cre"),
+      person("Chenyang", "Wang", , "chenyang@chenyangwang.com", role = c("ctb"),
            comment = c(ORCID = "YOUR-ORCID-ID")))
-Description: Calculate and plot stock signals using moving average and 
-Bollinger band indicators.
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+Description: Calculate and plot stock signals using moving average and Bollinger band indicators.
+License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.1
