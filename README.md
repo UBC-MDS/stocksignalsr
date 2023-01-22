@@ -1,7 +1,14 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# stocksignalsr
+## Authors
+
+-   Ruslan Dimitrov
+-   Robin Dhillon
+-   Peng Zhang
+-   Chenyang Wang
+
+## stocksignalsr: Introduction
 
 <!-- badges: start -->
 <!-- badges: end -->
@@ -38,7 +45,7 @@ stocks.
 Package details The package consists of 6 functions:
 
 -   get_data: The function downloads all available historic price data
-    for a selected stock and saves it. It utilizes the yfinance 
+    for a selected stock and saves it. It utilizes the yfinance python
     package to automate the process.
 -   moving_average: The function (inside calc_moving_average.py module)
     calculates a moving average, i.e. the average stock closing price

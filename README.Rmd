@@ -13,7 +13,14 @@ knitr::opts_chunk$set(
 )
 ```
 
-# stocksignalsr
+## Authors
+
+* Ruslan Dimitrov
+* Robin Dhillon
+* Peng Zhang
+* Chenyang Wang
+
+## stocksignalsr: Introduction
 
 <!-- badges: start -->
 <!-- badges: end -->
