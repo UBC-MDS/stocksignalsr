@@ -11,6 +11,7 @@
 #' @examples
 #' get_bbands("MSFT")
 get_bbands <- function(stock_ticker){
+  adjusted <- mavg <- dn <- up <- NULL #setting null values for column variables
   pathfile <- paste0("../data/", stock_ticker,".csv")
   if (file.exists(pathfile)){
     data <- readr::read_csv(pathfile)
