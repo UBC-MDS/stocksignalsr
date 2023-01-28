@@ -13,6 +13,7 @@ get_bbands(stock_ticker)
 }
 \value{
 tibble containing upper and lower Bollinger bands
+adjusted closing price, moving average, date
 }
 \description{
 Get Bollinger bands
