@@ -17,7 +17,7 @@ moving_average <- function(stock_ticker, period){
   
   # create df for plotting 
   
-  ma_df <- data.frame(date = data[period:nrow(data), ]$date,  
-                     mov_avg = ma)
+  ma_df <- data.frame(date = data[period:nrow(data), ]$date, 
+                      mov_avg = ma)
   return(ma_df)
 }
