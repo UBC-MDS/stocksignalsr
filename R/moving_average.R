@@ -11,5 +11,9 @@
 #' @examples
 #' moving_average("MSFT", 20)
 moving_average <- function(stock_ticker, period){
-
+  pathfile <- paste0("../data/", stock_ticker,".csv")
+  data = readr::read_csv(pathfile)
+  ma = zoo::rollmean(data |> dplyr::select(adjusted), period)
+  return(data.frame(date = data[period:nrow(data), ]$date,
+                    mov_avg = ma))
 }
