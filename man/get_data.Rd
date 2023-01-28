@@ -4,22 +4,22 @@
 \alias{get_data}
 \title{Downloads all available historical daily data
 for stock_ticker from Yahoo finance and stores it as a
-csv file in ata folder. If data folder does not exist
-it is created.}
+csv file in data folder as a sub directory of the current working directory
+If data folder does not exist it is created.}
 \usage{
 get_data(stock_ticker, start_date)
 }
 \arguments{
 \item{stock_ticker}{string
-Ticker of the stock such as 'MSFT}
+Ticker of the stock such as MSFT}
 
 \item{start_date}{starting date from which data needs to be downloaded}
 }
 \description{
 Downloads all available historical daily data
 for stock_ticker from Yahoo finance and stores it as a
-csv file in ata folder. If data folder does not exist
-it is created.
+csv file in data folder as a sub directory of the current working directory
+If data folder does not exist it is created.
 }
 \examples{
 get_data("MSFT", "1986-03-13")
