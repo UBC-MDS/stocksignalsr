@@ -11,21 +11,33 @@
 #' @examples
 #' plot_200ma("MSFT")
 plot_200ma <- function(stock_ticker){
+  adjusted <- tail <- NULL
   pathfile <- paste0("../data/", stock_ticker,".csv")
-  data <- readr::read_csv(pathfile)  # read stock data
-  
-  source("moving_average.R")  # inherit the function for plotting
-  period = 200 
-  ma_df <- moving_average(stock_ticker, period)  # obtain dataframe for plotting
-  ma_df$og_data <- paste(data[period:nrow(data), ]$adjusted)  # add the original datapoints to same df.
-  
-  ma_plot <- 
-    ggplot2::ggplot(tail(ma_df, 200)) +
-    ggplot2::aes(x = date, y = og_data) + 
-    ggplot2::geom_point() +
-    ggplot2::aes(x = date, y = adjusted, color = "red") + 
-    ggplot2::geom_point() +
-    ggplot2::scale_y_discrete("Close Price", breaks = 25)
-  
+  if (file.exists(pathfile)){
+    data <- readr::read_csv(pathfile)
+  } else {
+    stocksignalsr::get_data(stock_ticker, "1986-03-13")
+    data <- readr::read_csv(pathfile)  # read stock data
+  }
+  price <- data|>
+    dplyr::select(adjusted)
+  ma <- TTR::SMA(price,n=200)
+
+  data$ma<- ma
+  data <- tail(data,252)
+
+  ma_plot <-
+    ggplot2::ggplot(data, ggplot2::aes(x=date)) +
+    ggplot2::geom_line(ggplot2::aes(y = ma), color = "red") +
+    ggplot2::geom_line(ggplot2::aes(y = adjusted), color="blue", linetype="twodash") +
+    ggplot2::labs(y = "Stock price (USD)", x = "Date", fill = "") +
+    ggplot2::ggtitle("200-day Moving average\n vs Adjusted closing price") +
+    ggplot2::theme(plot.title = ggplot2::element_text(size = 20, face = "bold"),
+                   axis.text.x = ggplot2::element_text(size = 18, angle = 90),
+                   axis.text.y = ggplot2::element_text(size = 18, angle = 0),
+                   axis.title = ggplot2::element_text(size = 20),
+                   legend.text = ggplot2::element_text(size = 20),
+                   legend.title = ggplot2::element_text(size = 20, face = "bold"))
+
   return(ma_plot)
 }
