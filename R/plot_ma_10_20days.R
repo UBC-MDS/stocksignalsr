@@ -8,6 +8,7 @@
 #' @examples plot_ma_10_20days("MSFT")
 #'
 plot_ma_10_20days <- function(stock_symbol) {
+  adjusted <- value <- variable <- NULL
   pathfile <- paste0("../data/", stock_symbol,".csv")
   data <- readr::read_csv(pathfile)  # read stock data
 

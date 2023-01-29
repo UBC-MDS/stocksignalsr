@@ -12,11 +12,10 @@
 #' @examples
 #' plot_bbands("MSFT")
 plot_bbands <- function(stock_ticker){
-
+  tail <- up <- dn <- adjusted <- NULL
   bbands_df <- get_bbands(stock_ticker)
   bbands_df <- tail(bbands_df,252)
   options(repr.plot.height = 7, repr.plot.width = 10)
-
   bbands_plot <-
     ggplot2::ggplot(bbands_df, ggplot2::aes(x=date)) +
     ggplot2::geom_line(ggplot2::aes(y = up), color = "red") +
