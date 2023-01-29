@@ -3,10 +3,10 @@
 
 ## Authors
 
--   Ruslan Dimitrov
--   Robin Dhillon
--   Peng Zhang
--   Chenyang Wang
+    -   Ruslan Dimitrov
+    -   Robin Dhillon
+    -   Peng Zhang
+    -   Chenyang Wang
 
 ## stocksignalsr: Introduction
 
@@ -44,26 +44,26 @@ stocks.
 
 Package details The package consists of 6 functions:
 
--   get_data: The function downloads all available historic price data
+-   `get_data`: The function downloads all available historic price data
     for a selected stock and saves it. It utilizes the yfinance R
     package to automate the process.
--   moving_average: The function (inside calc_moving_average.py module)
+-   `moving_average`: The function (inside calc_moving_average.py module)
     calculates a moving average, i.e. the average stock closing price
     over a specified period, which is passed as argument size in the
     function call. It uses the data saved via get_data.
--   plot_ma_200days: The function plots the 200-day moving average
+-   `plot_ma_200days`: The function plots the 200-day moving average
     together with the stock price for a specified period, say the past
     200 trading days. It uses the output from the function
     calc_moving_avg to plot the chart.
--   plot_ma_10_20: The function plots the 10 and 20-day moving average
+-   `plot_ma_10_20`: The function plots the 10 and 20-day moving average
     together with the stock price for a specified period, say the past
     200 trading days. It uses the output from function move_ave_10_20 to
     plot the chart.
--   get_bbands: The function (inside bbands.py module) calculates the 20
+-   `get_bbands`: The function (inside bbands.py module) calculates the 20
     day Bollinger bands for the existing period of the data and returns
     a Pandas DataFrame with the respective upper and lower band. It uses
     data saved via get_data.
--   plot_bbands: The function plots upper and lower Bollinger bands
+-   `plot_bbands`: The function plots upper and lower Bollinger bands
     together with the stock closing price for over the past 200 days. It
     uses the output from function bbands to plot the chart.
 
@@ -94,9 +94,10 @@ devtools::install_github("UBC-MDS/stocksignalsr")
 
 ``` r
 library(stocksignalsr)
-```
 
-get_data(“MSFT”)
+get_data("MSFT", "1986-03-13")
+
+moving_average(“MSFT”, 20)
 
 get_bbands(“MSFT”)
 
@@ -104,6 +105,5 @@ plot_bbands(“MSFT”)
 
 plot_ma_10_20days(“MSFT”)
 
-moving_average(“MSFT”, 20)
-
 plot_200ma(“MSFT”)
+```
