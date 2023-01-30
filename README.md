@@ -61,7 +61,7 @@ Package details The package consists of 6 functions:
     plot the chart.
 -   `get_bbands`: The function (inside bbands.py module) calculates the 20
     day Bollinger bands for the existing period of the data and returns
-    a Pandas DataFrame with the respective upper and lower band. It uses
+    a DataFrame with the respective upper and lower band. It uses
     data saved via get_data.
 -   `plot_bbands`: The function plots upper and lower Bollinger bands
     together with the stock closing price for over the past 200 days. It
