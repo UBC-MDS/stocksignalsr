@@ -45,7 +45,7 @@ stocks.
 Package details The package consists of 6 functions:
 
 -   `get_data`: The function downloads all available historic price data
-    for a selected stock and saves it. It utilizes the TTR R
+    for a selected stock and saves it. It utilizes the tidyquant R
     package to automate the process.
 -   `moving_average`: The function (inside calc_moving_average.py module)
     calculates a moving average, i.e. the average stock closing price
