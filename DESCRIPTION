@@ -26,3 +26,7 @@ Imports:
     TTR,
     zoo
 Config/testthat/edition: 3
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
