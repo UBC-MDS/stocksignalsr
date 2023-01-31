@@ -93,6 +93,7 @@ devtools::install_github("UBC-MDS/stocksignalsr")
 ```
 
 ## Usage
+Please ensure that the folder in which the current working directory is located is not protected as data will be saved in that directory.
 
 ``` r
 library(stocksignalsr)
