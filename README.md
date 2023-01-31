@@ -98,7 +98,7 @@ devtools::install_github("UBC-MDS/stocksignalsr")
 library(stocksignalsr)
 ```
 
-get_data(“MSFT”)
+get_data(“MSFT”, "1986-03-13")
 
 get_bbands(“MSFT”)
 
