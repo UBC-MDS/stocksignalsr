@@ -77,6 +77,7 @@ library(stocksignalsr)
 
 Please ensure that the directory in which the current directory is located is not write protected, as data will be saved in that location.  You can use setwd() to change the location in which the console operates.
 
+```{r eval=FALSE}
 get_data("MSFT", "1986-03-13")
 
 get_bbands("MSFT")
@@ -88,4 +89,4 @@ plot_ma_10_20days("MSFT")
 moving_average("MSFT", 20)
 
 plot_200ma("MSFT")
-
+```
