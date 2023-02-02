@@ -1,5 +1,5 @@
 ---
-title: "Package Usage"
+title: "Package usage"
 output: rmarkdown::html_vignette
 vignette: >
   %\VignetteIndexEntry{Package usage}
