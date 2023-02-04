@@ -96,7 +96,7 @@ library(stocksignalsr)
 
 ```
 
-## Usage
+## Usage and Demonstration
 
 Functions can be run as demonstrated below. The example is given with
 Microsoft's stock price, however, any publicly traded company can be
