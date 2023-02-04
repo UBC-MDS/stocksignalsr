@@ -45,6 +45,7 @@ plot_ma_10_20days <- function(stock_symbol) {
                  y = value,
                  color = variable) +
     ggplot2::geom_line() +
+    ggplot2::ggtitle("10, 20-day moving average with closing price") +
     ggplot2::labs(x = "Date",
                   y = "Stock Price, US$",
                   color = "Category")

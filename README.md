@@ -46,23 +46,23 @@ stocks.
 
 Package details The package consists of 6 functions:
 
--   get_data: The function downloads all available historic price data
+-   `get_data`: The function downloads all available historic price data
     for a selected stock and saves it. It utilizes the tidyquant R
     package to automate the process.
--   moving_average: The function calculates a moving average, i.e. the
+-   `moving_average`: The function calculates a moving average, i.e. the
     average stock closing price over a specified period, which is passed
     as argument size in the function call. It uses the data saved via
     get_data.
--   plot_ma_200days: The function plots the 200-day moving average
+-   `plot_ma_200days`: The function plots the 200-day moving average
     together with the stock price for a specified period. It uses the
     output from the function moving_average to plot the chart.
--   plot_ma_10_20: The function plots the 10 and 20-day moving average
+-   `plot_ma_10_20`: The function plots the 10 and 20-day moving average
     together with the stock price for a specified period. It uses the
     output from function moving_average to plot the chart.
--   get_bbands: The function calculates the 20 day Bollinger bands for
+-   `get_bbands`: The function calculates the 20 day Bollinger bands for
     the existing period of the data and returns a dataframe with the
     respective upper and lower band. It uses data saved via get_data.
--   plot_bbands: The function plots upper and lower Bollinger bands
+-   `plot_bbands`: The function plots upper and lower Bollinger bands
     together with the stock closing price for over the past 252 trading
     days. It uses the output from function get_bbands to plot the chart.
 
@@ -100,16 +100,90 @@ located is not write protected, as data will be saved in that location.
 You can use setwd() to change the location in which the console
 operates.
 
+In order to download price-volume data for a given stock ticker, run
+function `get_data`. Data will be saved in csv file in the directory
+containing your current working directory:
+
 ``` r
 get_data("MSFT", "1986-03-13")
+```
 
-get_bbands("MSFT")
+Function `get_bbands` returns a data frame with calculations for upper
+and lower Bollinger bands. The data frame contains columns:
 
+-   `date` for which the data was collected
+-   `adjusted` for the adjusted closing price on respective date
+-   `mavg` for the moving average closing price over the last 20 days
+-   `up`, `dn` for the respective upper and lower band
+
+This data can be used as a trading indicator when compared to the
+current price of the stock. In order to get the data run the function as
+follows:
+
+``` r
+bands <- get_bbands("MSFT")
+tail(bands)
+#>            date adjusted     mavg       dn       up
+#> 9289 2023-01-19   231.93 235.4480 223.5626 247.3334
+#> 9290 2023-01-20   240.22 235.3690 223.6335 247.1045
+#> 9291 2023-01-23   242.58 235.2765 223.8019 246.7511
+#> 9292 2023-01-24   242.04 235.4690 223.6805 247.2575
+#> 9293 2023-01-25   240.61 235.5630 223.6427 247.4833
+#> 9294 2023-01-26   248.00 236.1150 223.0222 249.2078
+```
+
+Function `moving_average` generates a data frame with the moving average
+for the respective period in days entered in the function call. The data
+frame contains two columns:
+
+-   `date` for which the data was collected
+-   `adjusted` representing the moving average for the respective
+    period.
+
+This data can be used as an indicator in combination with other factors
+takaen into account by the user. The function can be used run as
+follows.
+
+``` r
+
+ma <- moving_average("MSFT", 20)
+tail(ma)
+#>            date adjusted
+#> 9270 2023-01-19 235.4480
+#> 9271 2023-01-20 235.3690
+#> 9272 2023-01-23 235.2765
+#> 9273 2023-01-24 235.4690
+#> 9274 2023-01-25 235.5630
+#> 9275 2023-01-26 236.1150
+```
+
+In order to visualize a plot of the Bollinger bands for a stock, run
+function `plot_bbands` as follows:
+
+``` r
 plot_bbands("MSFT")
+```
+
+<img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
+
+In order to visualize a plot of the 10 and 20-day moving average along
+with the stock’s closing price, run function `plot_ma_10_20days` as
+follows:
+
+``` r
 
 plot_ma_10_20days("MSFT")
+```
 
-moving_average("MSFT", 20)
+<img src="man/figures/README-unnamed-chunk-7-1.png" width="100%" />
+
+Finally, in order to visualize a plot of the 200-day moving average
+along with the stock’s closing price, run function `plot_200ma` as
+follows:
+
+``` r
 
 plot_200ma("MSFT")
 ```
+
+<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />

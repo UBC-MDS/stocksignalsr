@@ -32,12 +32,12 @@ plot_200ma <- function(stock_ticker){
     ggplot2::geom_line(ggplot2::aes(y = adjusted), color="blue", linetype="twodash") +
     ggplot2::labs(y = "Stock price (USD)", x = "Date", fill = "") +
     ggplot2::ggtitle("200-day Moving average\n vs Adjusted closing price") +
-    ggplot2::theme(plot.title = ggplot2::element_text(size = 20, face = "bold"),
-                   axis.text.x = ggplot2::element_text(size = 18, angle = 90),
-                   axis.text.y = ggplot2::element_text(size = 18, angle = 0),
-                   axis.title = ggplot2::element_text(size = 20),
-                   legend.text = ggplot2::element_text(size = 20),
-                   legend.title = ggplot2::element_text(size = 20, face = "bold"))
+    ggplot2::theme(plot.title = ggplot2::element_text(size = 15, face = "bold"),
+                   axis.text.x = ggplot2::element_text(size = 12, angle = 90),
+                   axis.text.y = ggplot2::element_text(size = 12, angle = 0),
+                   axis.title = ggplot2::element_text(size = 12),
+                   legend.text = ggplot2::element_text(size = 12),
+                   legend.title = ggplot2::element_text(size = 12, face = "bold"))
 
   return(ma_plot)
 }

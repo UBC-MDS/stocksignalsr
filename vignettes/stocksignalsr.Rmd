@@ -89,7 +89,7 @@ devtools::install_github("UBC-MDS/stocksignalsr")
 Next, here is how to load and use the package
 
 
-```{r eval=FALSE}
+```{r message=FALSE}
 library(stocksignalsr)
 
 ```
@@ -98,18 +98,63 @@ library(stocksignalsr)
 
 Functions can be run as demonstrated below. The example is given with Microsoft's stock price, however, any publicly traded company can be used as long as the stock ticker is entered correctly.  In order to obtain the data for each respective stock, a starting date must be entered in the form `YYYY-MM-DD`.
 
+Please ensure that the directory in which the current directory is located is not write protected, as data will be saved in that location.  You can use setwd() to change the location in which the console operates.
 
-```{r, eval=FALSE}
+In order to download price-volume data for a given stock ticker, run function `get_data`.  Data will be saved in csv file in the directory containing your current working directory: 
+
+```{r eval=FALSE}
 get_data("MSFT", "1986-03-13")
-get_bbands("MSFT")
+```
+
+Function `get_bbands` returns a data frame with calculations for upper
+and lower Bollinger bands.  The data frame contains columns:
+
+- `date` for which the data was collected
+- `adjusted` for the adjusted closing price on respective date
+- `mavg` for the moving average closing price over the last 20 days
+- `up`, `dn` for the respective upper and lower band
+
+This data can be used as a trading indicator when compared to the current price of the stock. In order to get the data run the function as follows:
+
+```{r, message = FALSE}
+bands <- get_bbands("MSFT")
+tail(bands)
+```
+
+Function `moving_average` generates a data frame with the moving average for the respective period in days entered in the function call.  The data frame contains two columns:
+
+- `date` for which the data was collected
+- `adjusted` representing the moving average for the respective period.
+
+This data can be used as an indicator in combination with other factors takaen into account by the user. The function can be used run as follows.
+
+```{r, message = FALSE}
+
+ma <- moving_average("MSFT", 20)
+tail(ma)
+```
+
+In order to visualize a plot of the Bollinger bands for a stock, run function `plot_bbands` as follows:
+
+```{r, message=FALSE}
 plot_bbands("MSFT")
+```
+
+In order to visualize a plot of the 10 and 20-day moving average along with the stock's closing price, run function `plot_ma_10_20days` as follows:
+
+```{r, message = FALSE}
+
 plot_ma_10_20days("MSFT")
-moving_average("MSFT", 20)
-plot_200ma("MSFT")
 ```
 
 
+Finally, in order to visualize a plot of the 200-day moving average along with the stock's closing price, run function `plot_200ma` as follows:
 
+
+```{r message=FALSE}
+
+plot_200ma("MSFT")
+```
 
 
 
