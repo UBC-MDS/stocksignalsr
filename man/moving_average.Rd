@@ -7,7 +7,7 @@
 moving_average(stock_ticker, period)
 }
 \arguments{
-\item{stock_ticker}{A string corresponding to the name of the stock.}
+\item{stock_ticker}{A string corresponding to the name of the stock such as "MSFT".}
 
 \item{period}{Number of days for which the moving average is computed}
 }

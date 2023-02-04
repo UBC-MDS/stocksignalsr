@@ -2,7 +2,7 @@
 #' Calculates upper and lower Bollinger bands based on standard deviation
 #' of stock's close prirce over the past 20 days
 #'
-#' @param stock_ticker String. Stock ticker of company to be analysed
+#' @param stock_ticker String. Stock ticker of company to be analysed such as "MSFT"
 #'
 #' @return tibble containing upper and lower Bollinger bands
 #' adjusted closing price, moving average, date

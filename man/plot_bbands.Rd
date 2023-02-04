@@ -9,7 +9,7 @@ plot_bbands(stock_ticker)
 }
 \arguments{
 \item{stock_ticker}{string Ticker symbol of the
-stock for which the plot is created}
+stock for which the plot is created such as "MSFT"}
 }
 \value{
 A line chart showing price data and corresponding upper

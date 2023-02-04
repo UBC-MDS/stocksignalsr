@@ -9,7 +9,7 @@ of stock's close prirce over the past 20 days}
 get_bbands(stock_ticker)
 }
 \arguments{
-\item{stock_ticker}{String. Stock ticker of company to be analysed}
+\item{stock_ticker}{String. Stock ticker of company to be analysed such as "MSFT"}
 }
 \value{
 tibble containing upper and lower Bollinger bands

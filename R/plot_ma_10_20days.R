@@ -1,6 +1,6 @@
 #' Plot stock price and corresponding 10 and 20 day moving average.
 #'
-#' @param stock_symbol Ticker symbol of the stock for which the plot is created
+#' @param stock_symbol Ticker symbol of the stock for which the plot is created such as "MSFT"
 #'
 #' @return A line chart showing price data and corresponding 10 and 20 day moving average line for a stock.
 #' @export
@@ -45,6 +45,7 @@ plot_ma_10_20days <- function(stock_symbol) {
                  y = value,
                  color = variable) +
     ggplot2::geom_line() +
+    ggplot2::ggtitle("10, 20-day moving average with closing price") +
     ggplot2::labs(x = "Date",
                   y = "Stock Price, US$",
                   color = "Category")

@@ -2,7 +2,7 @@
 #' for the last 200 trading days.
 #'
 #' @param stock_ticker string Ticker symbol of the
-#' stock for which the plot is created
+#' stock for which the plot is created such as "MSFT"
 #'
 #' @return A line chart showing price data and corresponding upper
 #' and lower Bollinger bands.
@@ -23,12 +23,12 @@ plot_bbands <- function(stock_ticker){
     ggplot2::geom_line(ggplot2::aes(y = adjusted), color="blue", linetype="twodash") +
     ggplot2::labs(y = "Adjusted close price", x = "Date", fill = "") +
     ggplot2::ggtitle("Bollinger bands last 252 trading days") +
-    ggplot2::theme(plot.title = ggplot2::element_text(size = 20, face = "bold"),
-                   axis.text.x = ggplot2::element_text(size = 18, angle = 90),
-                   axis.text.y = ggplot2::element_text(size = 18, angle = 0),
-                   axis.title = ggplot2::element_text(size = 20),
-                   legend.text = ggplot2::element_text(size = 20),
-                   legend.title = ggplot2::element_text(size = 20, face = "bold"))
+    ggplot2::theme(plot.title = ggplot2::element_text(size = 15, face = "bold"),
+                   axis.text.x = ggplot2::element_text(size = 12, angle = 90),
+                   axis.text.y = ggplot2::element_text(size = 12, angle = 0),
+                   axis.title = ggplot2::element_text(size = 12),
+                   legend.text = ggplot2::element_text(size = 12),
+                   legend.title = ggplot2::element_text(size = 12, face = "bold"))
   return(bbands_plot)
 
 }

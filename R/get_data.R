@@ -4,7 +4,7 @@
 #' If data folder does not exist it is created.
 #'
 #' @param stock_ticker string
-#' Ticker of the stock such as MSFT
+#' Ticker of the stock such as "MSFT"
 #' @param start_date
 #' starting date from which data needs to be downloaded
 #'
