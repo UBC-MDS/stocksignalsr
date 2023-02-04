@@ -7,7 +7,7 @@
 plot_200ma(stock_ticker)
 }
 \arguments{
-\item{stock_ticker}{string
+\item{stock_ticker}{string such as "MSFT"
 name of the stock for which the plot is created}
 }
 \value{

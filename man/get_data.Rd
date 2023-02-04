@@ -11,7 +11,7 @@ get_data(stock_ticker, start_date)
 }
 \arguments{
 \item{stock_ticker}{string
-Ticker of the stock such as MSFT}
+Ticker of the stock such as "MSFT"}
 
 \item{start_date}{starting date from which data needs to be downloaded}
 }

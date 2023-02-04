@@ -2,7 +2,7 @@
 #' for the last 200 trading days.
 #'
 #' @param stock_ticker string Ticker symbol of the
-#' stock for which the plot is created
+#' stock for which the plot is created such as "MSFT"
 #'
 #' @return A line chart showing price data and corresponding upper
 #' and lower Bollinger bands.

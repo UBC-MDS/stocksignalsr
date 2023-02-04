@@ -1,6 +1,6 @@
 #' Plot stock price and corresponding 200 day moving average.
 #'
-#' @param stock_ticker string
+#' @param stock_ticker string such as "MSFT"
 #' name of the stock for which the plot is created
 #'
 #' @return A line chart showing price data and corresponding 200 day

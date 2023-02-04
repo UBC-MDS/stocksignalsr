@@ -169,7 +169,8 @@ operates.</p>
 function <code>get_data</code>. Data will be saved in csv file in the
 directory containing your current working directory:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/get_data.html">get_data</a></span><span class="op">(</span><span class="st">"MSFT"</span>, <span class="st">"1986-03-13"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">stock_ticker</span> <span class="op">&lt;-</span> <span class="st">"MSFT"</span></span>
+<span><span class="fu"><a href="../reference/get_data.html">get_data</a></span><span class="op">(</span><span class="va">stock_ticker</span>, <span class="st">"1986-03-13"</span><span class="op">)</span></span></code></pre></div>
 <p>Function <code>get_bbands</code> returns a data frame with
 calculations for upper and lower Bollinger bands. The data frame
 contains columns:</p>
@@ -190,15 +191,9 @@ band</li>
 current price of the stock. In order to get the data run the function as
 follows:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">bands</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_bbands.html">get_bbands</a></span><span class="op">(</span><span class="st">"MSFT"</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">bands</span><span class="op">)</span></span>
-<span><span class="co">#&gt;            date adjusted     mavg       dn       up</span></span>
-<span><span class="co">#&gt; 9294 2023-01-26   248.00 236.1150 223.0222 249.2078</span></span>
-<span><span class="co">#&gt; 9295 2023-01-27   248.16 236.7965 222.7225 250.8705</span></span>
-<span><span class="co">#&gt; 9296 2023-01-30   242.71 236.8815 222.6868 251.0762</span></span>
-<span><span class="co">#&gt; 9297 2023-01-31   247.81 237.2810 222.3474 252.2146</span></span>
-<span><span class="co">#&gt; 9298 2023-02-01   252.75 237.9395 221.5664 254.3126</span></span>
-<span><span class="co">#&gt; 9299 2023-02-02   264.60 239.7145 220.1696 259.2594</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">stock_ticker</span> <span class="op">&lt;-</span> <span class="st">"MSFT"</span></span>
+<span><span class="va">bands</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/get_bbands.html">get_bbands</a></span><span class="op">(</span><span class="va">stock_ticker</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">bands</span><span class="op">)</span></span></code></pre></div>
 <p>Function <code>moving_average</code> generates a data frame with the
 moving average for the respective period in days entered in the function
 call. The data frame contains two columns:</p>
@@ -213,35 +208,29 @@ respective period.</li>
 factors takaen into account by the user. The function can be used run as
 follows.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="va">ma</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/moving_average.html">moving_average</a></span><span class="op">(</span><span class="st">"MSFT"</span>, <span class="fl">20</span><span class="op">)</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">ma</span><span class="op">)</span></span>
-<span><span class="co">#&gt;            date adjusted</span></span>
-<span><span class="co">#&gt; 9275 2023-01-26 236.1150</span></span>
-<span><span class="co">#&gt; 9276 2023-01-27 236.7965</span></span>
-<span><span class="co">#&gt; 9277 2023-01-30 236.8815</span></span>
-<span><span class="co">#&gt; 9278 2023-01-31 237.2810</span></span>
-<span><span class="co">#&gt; 9279 2023-02-01 237.9395</span></span>
-<span><span class="co">#&gt; 9280 2023-02-02 239.7145</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="va">stock_ticker</span> <span class="op">&lt;-</span> <span class="st">"MSFT"</span></span>
+<span><span class="va">ma</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/moving_average.html">moving_average</a></span><span class="op">(</span><span class="va">stock_ticker</span>, <span class="fl">20</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/head.html" class="external-link">tail</a></span><span class="op">(</span><span class="va">ma</span><span class="op">)</span></span></code></pre></div>
 <p>In order to visualize a plot of the Bollinger bands for a stock, run
 function <code>plot_bbands</code> as follows:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/plot_bbands.html">plot_bbands</a></span><span class="op">(</span><span class="st">"MSFT"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="stocksignalsr_files/figure-html/unnamed-chunk-7-1.png" width="700"></p>
+<code class="sourceCode R"><span><span class="va">stock_ticker</span> <span class="op">&lt;-</span> <span class="st">"MSFT"</span></span>
+<span><span class="fu"><a href="../reference/plot_bbands.html">plot_bbands</a></span><span class="op">(</span><span class="va">stock_ticker</span><span class="op">)</span></span></code></pre></div>
+<p><img src="images/README-unnamed-chunk-4-1.png"></p>
 <p>In order to visualize a plot of the 10 and 20-day moving average
 along with the stock’s closing price, run function
 <code>plot_ma_10_20days</code> as follows:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="fu"><a href="../reference/plot_ma_10_20days.html">plot_ma_10_20days</a></span><span class="op">(</span><span class="st">"MSFT"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="stocksignalsr_files/figure-html/unnamed-chunk-8-1.png" width="700"></p>
+<code class="sourceCode R"><span><span class="va">stock_ticker</span> <span class="op">&lt;-</span> <span class="st">"MSFT"</span></span>
+<span><span class="fu"><a href="../reference/plot_ma_10_20days.html">plot_ma_10_20days</a></span><span class="op">(</span><span class="va">stock_ticker</span><span class="op">)</span></span></code></pre></div>
+<p><img src="images/README-unnamed-chunk-7-1.png"></p>
 <p>Finally, in order to visualize a plot of the 200-day moving average
 along with the stock’s closing price, run function
 <code>plot_200ma</code> as follows:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="fu"><a href="../reference/plot_200ma.html">plot_200ma</a></span><span class="op">(</span><span class="st">"MSFT"</span><span class="op">)</span></span></code></pre></div>
-<p><img src="stocksignalsr_files/figure-html/unnamed-chunk-9-1.png" width="700"></p>
+<code class="sourceCode R"><span><span class="va">stock_ticker</span> <span class="op">&lt;-</span> <span class="st">"MSFT"</span></span>
+<span><span class="fu"><a href="../reference/plot_200ma.html">plot_200ma</a></span><span class="op">(</span><span class="va">stock_ticker</span><span class="op">)</span></span></code></pre></div>
+<p><img src="images/README-unnamed-chunk-8-1.png"></p>
 </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
     </nav></aside>
