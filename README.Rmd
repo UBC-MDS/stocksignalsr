@@ -60,7 +60,7 @@ You can install the development version of stocksignalsr from [GitHub](https://g
 devtools::install_github("UBC-MDS/stocksignalsr")
 ```
 
-## Usage and Demonstration
+## Usage
 
 ```{r}
 library(stocksignalsr)
