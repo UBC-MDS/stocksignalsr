@@ -90,7 +90,7 @@ You can install the development version of stocksignalsr from
 devtools::install_github("UBC-MDS/stocksignalsr")
 ```
 
-## Usage
+## Usage and Demonstration
 
 ``` r
 library(stocksignalsr)
